@@ -5,7 +5,7 @@ After=syslog.target network.target
 [Service]
 Environment="LD_LIBRARY_PATH=/opt/piavpn/lib"
 ExecStart=/opt/piavpn/bin/pia-daemon
-ExecStartPost=/opt/piavpn/bin/piactl connect
+ExecStartPost=/home/pia/connectPIA.sh
 Restart=always
 
 [Install]

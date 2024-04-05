@@ -9,11 +9,11 @@ echo "$password" >> /home/pia/login.txt
 
 piactl login /home/pia/login.txt
 
+piactl -u applysettings '{"killswitch":"on"}'
 piactl set protocol wireguard
 piactl background enable
 piactl set allowlan true
 piactl set requestportforward true
-piactl -u applysettings '{"killswitch":"on"}'
 
 echo "net.ipv4.ip_forward=1" | sudo -S tee -a /etc/sysctl.conf
 echo "net.ipv6.conf.all.disable_ipv6=1" | sudo -S tee -a /etc/sysctl.conf
